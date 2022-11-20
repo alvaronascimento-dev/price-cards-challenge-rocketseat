@@ -1,0 +1,199 @@
+:root {
+    --yellow: #ffcc29;
+    --blue: #1d539e;
+    --gray: #828799;
+    --page-background: #f9fbfc;
+  }
+
+  html {
+    font-size: 62.5%;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+  }
+
+  body {
+    height: 100vh;
+    font-family: Open Sans, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--page-background);
+  }
+
+  body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background-color: var(--blue);
+    height: 50vh;
+    width: 100%;
+  }
+
+/* ----- GLOBAL CONTAINER ----- */
+
+header {
+  color: white;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+  .container header h1 {
+      font-size: 3.5rem;
+  }
+
+  .container header p {
+    font-size: 1.4rem;
+    font-weight: 400;
+    margin-top: 15px;
+  }
+
+  div.container {
+    height: 80vh;
+    min-width: 80%;
+    display: grid;
+    grid-template-rows: 30% 70%;
+  }
+
+
+  /* ----- CARDS -----*/
+
+  div.container-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 300px);
+    justify-content: center;
+    gap: 25px;
+  }
+
+  section.card {
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--page-background);
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    transition: all 500ms ease;
+  }
+
+  section.card:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+  }
+
+  .card-header {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    border-bottom: .1px solid lightgray;
+  }
+
+  section.card:hover .card-header{
+    background-color: var(--yellow);
+    transition: all 500ms ease;
+  }
+
+  .card-header .signature {
+    margin-left: 25px;
+    font-size: 1.8rem;
+    font-weight: 600;
+  }
+
+  .card-header :nth-child(2) {
+    display: none;
+    margin-right: 25px;
+    font-size: 1.1rem;
+    background-color: var(--blue);
+    color: white;
+    border-radius: 20px;
+    padding: 10px 25px;
+  }
+
+  .card-details {
+    width: 240px;
+    margin: 0 auto;
+    margin-top: 15px;
+  }
+
+  .card .price {
+    height: 52px;
+    width: 176px;
+    font-size: 3rem;
+    font-weight: bold;
+    text-align: center;
+  }
+
+  .card .price :nth-child(1) {
+    font-weight: bold;
+    font-size: 1.6rem;
+  }
+
+  .card .price :nth-child(2) {
+    font-weight: 400;
+    font-size: 1.6rem;
+    color: var(--gray);
+  }
+
+  .card-details .description {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--gray);
+    margin-top: 15px;
+    border-bottom: .1px solid lightgray;
+    padding-bottom: 15px;
+  }
+
+  .card-details .topics {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;   
+    flex-direction: column;
+    gap: 20px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--gray);
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .card-details .topics .topic-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .button {
+    width: 100%;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    color: var(--blue);
+    background-color: white;
+    font-weight: 600;
+    border: 1px solid var(--blue);
+    padding: 10px;
+    border-radius: 10px;
+    outline: none;
+  }
+
+  .button:hover {
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;;
+  }
+
+  section.card:hover .button {
+    background-color: var(--blue);
+    color: white;
+    transition: all 500ms ease;
+  }
+
+  section.card:hover .card-header :nth-child(2) {
+    display: inline;
+  }
